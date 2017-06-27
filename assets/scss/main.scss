@@ -1,0 +1,65 @@
+$flag-height: 230px;
+$blue-usa: rgb(2,48,180);
+
+@mixin box-sizing() {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+.flag{
+	@include box-sizing;
+	width:  $flag-height * 2;
+	height: $flag-height;
+	display: block;
+	margin: 5px;
+	.flag__container4{
+		height: $flag-height / 2;
+		width: $flag-height - 1;
+		float: left;
+		display: inline-block;
+		@include box-sizing;
+
+	}
+
+	.flag__container2{
+		@include box-sizing;
+		height: $flag-height / 2;
+		width: $flag-height * 2;
+		clear: both;
+	}
+
+	.flag__container4--stars{
+		background: $blue-usa;
+		color: #fff;
+
+		.stars:nth-child(even){
+			text-align: center;
+			margin-top: 4px;
+		}
+		.stars:nth-child(odd){
+			text-align: left;
+		}	
+		i{
+			width: ($flag-height / 5) - 2 !important;
+			display: inline-block;
+			float: left;
+			font-size: .5em;
+			&:first-child{
+				margin-left: 9px;
+			}
+		}
+	}
+
+	.lines{
+		height: $flag-height / 16;
+		margin-bottom: $flag-height / 16 ;
+		background-color: red;
+	}
+
+
+
+
+}

@@ -1,0 +1,50 @@
+.funky{
+	font:{
+		family: fantasy;
+		size: 30em;
+		weight: bold;
+	}
+}
+
+
+Sass Script
+
+///////////////
+
+Mixin
+
+@Mixin botones{
+	color: white;
+	width: 30px;
+	border-radius: 10px;
+}
+
+.btn-a{
+	@include botones;
+	background:  blue;
+}
+
+.btn-b{
+	@include botones;
+	background: black;
+}
+
+
+/////
+Funciones
+
+@function numero($num: 500px){
+	@return $num/2;
+}
+
+.uno{
+	width: numero();
+}
+
+.dos{
+	width: numero(600px);
+}
+
+///
+
+sass -watch 
